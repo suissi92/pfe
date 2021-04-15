@@ -1,4 +1,4 @@
-package com.app.cms2.repository;
+package app.com.cms2.repository;
 
 import java.util.Optional;
 

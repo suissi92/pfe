@@ -1,4 +1,4 @@
-package com.app.cms2.security.jwt;
+package app.com.cms2.security.jwt;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
-import com.app.cms2.security.service.UserPrinciple;
+import app.com.cms2.security.service.UserPrinciple;
 
 import io.jsonwebtoken.SignatureAlgorithm;
 
@@ -19,10 +19,10 @@ public class JwtProvider {
  
     private static final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
  
-    @Value("${grokonez.app.jwtSecret}")
+    @Value("${cms2.app.jwtSecret}")
     private String jwtSecret;
  
-    @Value("${grokonez.app.jwtExpiration}")
+    @Value("${cms2.app.jwtExpiration}")
     private int jwtExpiration;
  
     public String generateJwtToken(Authentication authentication) {

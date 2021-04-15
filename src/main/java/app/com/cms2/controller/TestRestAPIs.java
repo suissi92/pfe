@@ -1,4 +1,4 @@
-package com.app.cms2.controller;
+package app.com.cms2.controller;
 
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestRestAPIs {
   
   @GetMapping("/api/test/machinist")
-  @PreAuthorize("hasRole('Machiniste') or hasRole('ADMIN')")
+  @PreAuthorize("hasRole('Machinist') or hasRole('ADMIN')  or hasRole('LigneManager') or hasRole('ProjectManager')")
   public String userAccess() {
     return ">>> User Contents!";
   }

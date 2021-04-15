@@ -1,4 +1,4 @@
-package com.app.cms2.security.jwt;
+package app.com.cms2.security.jwt;
 
 import java.io.IOException;
 

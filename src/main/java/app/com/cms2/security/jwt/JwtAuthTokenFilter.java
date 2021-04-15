@@ -1,4 +1,4 @@
-package com.app.cms2.security.jwt;
+package app.com.cms2.security.jwt;
 
 import java.io.IOException;
 
@@ -16,7 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.app.cms2.security.service.UserDetailsServiceImpl;
+import app.com.cms2.security.service.UserDetailsServiceImpl;
 
 public class JwtAuthTokenFilter extends OncePerRequestFilter {
 	 

@@ -1,4 +1,5 @@
-package com.app.cms2.security;
+package app.com.cms2.security;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -14,40 +15,40 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.app.cms2.security.jwt.JwtAuthEntryPoint;
-import com.app.cms2.security.jwt.JwtAuthTokenFilter;
-import com.app.cms2.security.service.UserDetailsServiceImpl;
+import app.com.cms2.security.jwt.JwtAuthEntryPoint;
+import app.com.cms2.security.jwt.JwtAuthTokenFilter;
+import app.com.cms2.security.service.UserDetailsServiceImpl;
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(
-    prePostEnabled = true
+		prePostEnabled = true
 )
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     UserDetailsServiceImpl userDetailsService;
- 
+
     @Autowired
     private JwtAuthEntryPoint unauthorizedHandler;
- 
+
     @Bean
     public JwtAuthTokenFilter authenticationJwtTokenFilter() {
         return new JwtAuthTokenFilter();
     }
- 
+
     @Override
     public void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
         authenticationManagerBuilder
-                .userDetailsService (userDetailsService)
+                .userDetailsService(userDetailsService)
                 .passwordEncoder(passwordEncoder());
     }
- 
+
     @Bean
     @Override
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
- 
+
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
