@@ -11,10 +11,12 @@
 	<groupId>com.example</groupId>
 	<artifactId>cms2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	
 	<name>cms2</name>
 	<description>Project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
+		
 	</properties>
 	<dependencies>
 		<dependency>

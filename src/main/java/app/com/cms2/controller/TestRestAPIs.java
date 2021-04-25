@@ -11,8 +11,8 @@ public class TestRestAPIs {
   
   @GetMapping("/api/test/machinist")
   @PreAuthorize("hasRole('Machinist') or hasRole('ADMIN')  or hasRole('LigneManager') or hasRole('ProjectManager')")
-  public String userAccess() {
-    return ">>> User Contents!";
+  public String machinsteAccess() {
+    return ">>> machiniste Contents!";
   }
  
   @GetMapping("/api/test/lm")
@@ -30,7 +30,7 @@ public class TestRestAPIs {
   
   
   @GetMapping("/api/test/admin")
-  @PreAuthorize("hasRole('ADMIN')")
+  @PreAuthorize("hasAuthority('ADMIN')")
   public String adminAccess() {
     return ">>> Admin Contents";
   }

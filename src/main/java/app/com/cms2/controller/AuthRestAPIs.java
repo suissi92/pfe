@@ -60,6 +60,7 @@ public class AuthRestAPIs {
     SecurityContextHolder.getContext().setAuthentication(authentication);
  
     String jwt = jwtProvider.generateJwtToken(authentication);
+    System.out.println(jwt);
     UserDetails userDetails = (UserDetails) authentication.getPrincipal();
  
     return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getUsername(), userDetails.getAuthorities()));

@@ -20,10 +20,9 @@ import app.com.cms2.security.jwt.JwtAuthTokenFilter;
 import app.com.cms2.security.service.UserDetailsServiceImpl;
 
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 @EnableWebSecurity
-@EnableGlobalMethodSecurity(
-		prePostEnabled = true
-)
+
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     UserDetailsServiceImpl userDetailsService;
